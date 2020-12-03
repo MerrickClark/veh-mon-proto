@@ -5,6 +5,20 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+  ],
 }
