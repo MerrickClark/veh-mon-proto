@@ -14,7 +14,8 @@ export default function Layout({ children }) {
           <h3 style={{ display: `inline` }}>GoCarGo</h3>
         </Link>
         <ul style={{ listStyle: `none`, float: `right` }}>
-          <ListLink to="/">Home</ListLink>
+          <ListLink to="/">Fleet Status</ListLink>
+          <ListLink to="/clients">Clients</ListLink>
           <ListLink to="/about/">About</ListLink>
           <ListLink to="/support/">Support</ListLink>
         </ul>

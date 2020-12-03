@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBeer } from 'react-icons/fa';
+import { FaCircle, FaPlusCircle } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,16 +9,16 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod) {
-  return { id, date, name, shipTo, paymentMethod };
+function createData(id, status, expandLink, vehFaultDescription, vehFaultStats) {
+  return { id, status, expandLink, vehFaultDescription, vehFaultStats };
 }
 
 const rows = [
-  createData(0, '  ', '  ', 'Engine Overheat', '1 / 2'),
-  createData(1, '  ', '  ', 'Trans Overheat', '3 / 4'),
-  createData(2, '  ', '  ', 'PCV Valve Voltage Low', '9+ / 9+'),
-  createData(3, '  ', '  ', 'Evap Canister Pressure High', '2 / 3'),
-  createData(4, '  ', '  ', 'Defroster Circuit Open', '3 / 5'),
+  createData(0, '', '', 'Engine Overheat', '1 / 2'),
+  createData(1, '', '', 'Trans Overheat', '3 / 4'),
+  createData(2, '', '', 'PCV Valve Voltage Low', '9+ / 9+'),
+  createData(3, '', '', 'Evap Canister Pressure High', '2 / 3'),
+  createData(4, '', '', 'Defroster Circuit Open', '3 / 5'),
 ];
 
 function preventDefault(event) {
@@ -35,7 +35,7 @@ export default function StatusTable() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Fleet Status <FaBeer /></Title>
+      <Title>Fleet Status</Title>
       
       <Table size="small">
         <TableHead>
@@ -50,10 +50,10 @@ export default function StatusTable() {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
+              <TableCell><FaCircle /></TableCell>
+              <TableCell><FaPlusCircle /></TableCell>
+              <TableCell>{row.vehFaultDescription}</TableCell>
+              <TableCell>{row.vehFaultStats}</TableCell>
               {/* <TableCell align="right">{row.amount}</TableCell> */}
             </TableRow>
           ))}

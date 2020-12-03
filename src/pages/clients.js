@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
-import StatusTable from "../components/StatusTable"
+import ClientsTable from "../components/ClientsTable"
 
 export default function Home() {
 
   return (
     <Layout>
-      <StatusTable />
+      <ClientsTable />
     </Layout>
   );
 }
