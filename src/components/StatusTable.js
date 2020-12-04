@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@material-ui/core/Link';
 import { FaCircle, FaPlusCircle } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -44,17 +45,15 @@ export default function StatusTable() {
             <TableCell>Expand</TableCell>
             <TableCell>Description</TableCell>
             <TableCell>Occurances / Engine Cycles</TableCell>
-            {/* <TableCell align="right">Sale Amount</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
               <TableCell><FaCircle /></TableCell>
-              <TableCell><FaPlusCircle /></TableCell>
+              <TableCell><Link color="#1ca086" href="#" underline="none" onClick={preventDefault}><FaPlusCircle /></Link></TableCell>
               <TableCell>{row.vehFaultDescription}</TableCell>
               <TableCell>{row.vehFaultStats}</TableCell>
-              {/* <TableCell align="right">{row.amount}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>

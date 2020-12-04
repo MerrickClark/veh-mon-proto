@@ -49,7 +49,7 @@ export default function ClientsTable() {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell><FaPlusCircle /></TableCell>
+              <TableCell><Link color="#1ca086" href="#" onClick={preventDefault}><FaPlusCircle /></Link></TableCell>
               <TableCell>{row.clientName}</TableCell>
               <TableCell>{row.phone}</TableCell>
               <TableCell>
