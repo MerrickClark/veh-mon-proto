@@ -53,7 +53,7 @@ export default function ClientsTable() {
               <TableCell>{row.clientName}</TableCell>
               <TableCell>{row.phone}</TableCell>
               <TableCell>
-                <Link color="#1ca086" href="#" onClick={preventDefault}>
+                <Link color="#1ca086" href="/vehicleStatus/">
                   {row.vehicle}
                 </Link>
               </TableCell>
